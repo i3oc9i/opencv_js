@@ -39,7 +39,7 @@
 
 
 OCV_CFG ?= ./config/mtc_config.py
-OCV_TEST ?= ./test/idex.html
+OCV_TEST ?= ./test/index.html
 OCV_VERSION ?= 4.10.0
 
 .PHONY: build_all build_default build_simd build_simd_threads 
