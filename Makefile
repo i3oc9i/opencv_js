@@ -42,7 +42,24 @@ OCV_CFG ?= ./config/mtc_config.py
 OCV_TEST ?= ./test/idex.html
 OCV_VERSION ?= 4.10.0
 
-all: build_default build_simd build_simd_threads 
+.PHONY: build_all build_default build_simd build_simd_threads clean clean_default clean_simd clean_simd_threads clone
+.DEFAULT_GOAL := help
+
+help:
+	@echo "Usage: make [target]"
+	@echo "Available targets:"
+	@echo "  build_all            Build all versions"
+	@echo "  build_default        Build default version"
+	@echo "  build_simd           Build SIMD version"
+	@echo "  build_simd_threads   Build SIMD and Threads version"
+	@echo "  clean                Clean all builds"
+	@echo "  clean_default        Clean default build"
+	@echo "  clean_simd           Clean SIMD build"
+	@echo "  clean_simd_threads   Clean SIMD and Threads build"
+	@echo "  clone                Clone OpenCV repository"
+
+	
+build_all: build_default build_simd build_simd_threads 
 
 build_default:
 	@echo "Building default version"
