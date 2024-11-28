@@ -56,9 +56,11 @@ help:
 	@echo "  clean_default        Clean default build"
 	@echo "  clean_simd           Clean SIMD build"
 	@echo "  clean_simd_threads   Clean SIMD and Threads build"
+	@echo "  clober               Clean everything"
 	@echo "  clone                Clone OpenCV repository"
 
-	
+
+
 build_all: build_default build_simd build_simd_threads 
 
 build_default:
@@ -96,6 +98,10 @@ clean_%:
 	@rm -rf $(subst clean_,build_,$@)
 
 clean: clean_default clean_simd clean_simd_threads
+
+clober: clean
+	@echo "Cleaning OpenCV"
+	@rm -rf ./opencv
 
 clone:
 	@echo "Cloning OpenCV"
